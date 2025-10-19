@@ -12,8 +12,8 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-  origin: "http://localhost:5173",
-  // origin: "https://ai-varun-6ehc.onrender.com",
+  // origin: "http://localhost:5173",
+  origin: "https://ai-gemini-pmfb.onrender.com",
 credentials: true,
 }));
 app.use(express.json());
