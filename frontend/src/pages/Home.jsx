@@ -45,9 +45,9 @@ const Home = () => {
   const getImageSrc = (img) => {
     if (!img) return null;
     if (img.startsWith("http://") || img.startsWith("https://")) return img;
-    if (img.startsWith("/public")) return `http://localhost:5000${img}`;
+    if (img.startsWith("/public")) return `https://ai-gemini-pmfb.onrender.com${img}`;
     if (img.startsWith("/")) return img;
-    return `http://localhost:5000/public/${img}`;
+    return `https://ai-gemini-pmfb.onrender.com/public/${img}`;
   };
 
   const handleCustomize = () => navigate("/customize");
@@ -66,7 +66,7 @@ const Home = () => {
 
   const getGeminiResponseWithLang = async (command, lang = "en-IN") => {
     try {
-      const response = await fetch("http://localhost:5000/api/gemini", {
+      const response = await fetch("https://ai-gemini-pmfb.onrender.com/api/gemini", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
